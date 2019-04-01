@@ -55,3 +55,12 @@ object Solution {
 Solution.minWindow("ababaca", "aa")
 
 
+
+
+def times(chars: List[Char]): List[(Char, Int)] = {
+  val temp = new Array[Int](128)
+  for(c <- chars) temp(c) += 1
+  (for(i <- 0 until 128; if temp(i) != 0) yield (i.toChar, temp(i))).toList
+}
+
+times(List('a', 'b', 'a', 'a'))
