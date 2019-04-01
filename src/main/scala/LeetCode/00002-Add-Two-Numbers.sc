@@ -16,6 +16,16 @@ class ListNode(var _x: Int = 0) {
   }
 }
 
+def lToLN(li: List[Int]):ListNode = li match {
+  case x::xs => {
+    val ret = new ListNode(x)
+    ret.next = lToLN(xs)
+    ret
+  }
+  case _ => null
+}
+
+
 object Solution {
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
     return addTwoNumbers(l1, l2, 0)
@@ -57,3 +67,6 @@ val b2 = new ListNode(9)
 b2.next = new ListNode(9)
 
 Solution.addTwoNumbers(a2,b2)
+
+Solution.addTwoNumbers(lToLN(List(1,2,3)),lToLN(List(9,9,9)))
+Solution.addTwoNumbers(lToLN(List(1)),lToLN(List(9,9)))

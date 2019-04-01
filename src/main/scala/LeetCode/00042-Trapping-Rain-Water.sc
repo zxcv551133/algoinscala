@@ -1,3 +1,5 @@
+
+// O(n) DP
 object Solution {
   def trap(height: Array[Int]): Int = {
     if(height.length == 0) return 0
