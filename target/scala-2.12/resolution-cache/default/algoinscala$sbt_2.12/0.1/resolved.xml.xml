@@ -4,7 +4,7 @@
 		module="algoinscala$sbt_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20190326160107"
+		publication="20190403173221"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

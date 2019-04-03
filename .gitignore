@@ -2,3 +2,4 @@
 *.log
 .idea
 .idea/workspace.xml
+*.properties
