@@ -17,3 +17,5 @@ object Solution {
 }
 
 Solution.addBinary("0", "1")
+
+Solution.addBinary("0", "1")
