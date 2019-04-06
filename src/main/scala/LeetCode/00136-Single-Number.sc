@@ -1,5 +1,5 @@
 object Solution {
   def singleNumber(nums: Array[Int]): Int = {
-    (nums :+ 0).foldLeft(0)(_ ^ _)
+    nums.foldLeft(0)(_ ^ _) ^ 0
   }
 }
