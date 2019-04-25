@@ -1,5 +1,8 @@
+import scala.annotation.tailrec
+
 object Solution {
   def findPeakElement(nums: Array[Int]): Int = {
+    @tailrec
     def findPeak(l: Int, r: Int): Int = {
       if(l == r) return l
       val mid = (l + r)/2
@@ -9,3 +12,6 @@ object Solution {
     findPeak(0, nums.length - 1)
   }
 }
+
+Solution.findPeakElement(Array(1,2,3))
+Solution.findPeakElement(Array(1,2,1))
