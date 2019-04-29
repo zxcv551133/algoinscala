@@ -17,4 +17,4 @@ object Solution {
 
 Solution.firstUniqChar("loveleetcode")
 Solution.firstUniqChar("leetcode")
-Solution.firstUniqChar("aabbcc")
+Solution.firstUniqChar  ("aabbcc")
