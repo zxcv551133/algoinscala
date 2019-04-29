@@ -5,13 +5,10 @@ class MedianFinder() {
   val minHeap = collection.mutable.PriorityQueue[Int](Int.MaxValue)(Ordering[Int].reverse)
 
   def addNum(num: Int) {
-    if(num > maxHeap.head) {
-      minHeap.enqueue(num)
-      if(maxHeap.size == minHeap.size -1) maxHeap.enqueue(minHeap.dequeue())
-    } else {
-      maxHeap.enqueue(num)
-      if(maxHeap.size -1 > minHeap.size) minHeap.enqueue(maxHeap.dequeue())
-    }
+    maxHeap.enqueue(num)
+    minHeap.enqueue(maxHeap.dequeue())
+    if(maxHeap.size < minHeap.size)
+      maxHeap.enqueue(minHeap.dequeue())
   }
 
   def findMedian(): Double = {
