@@ -4,8 +4,6 @@ import scala.annotation.tailrec
 
 object LC_00300_Longest_Increasing_Subsequence {
   def lengthOfLIS(nums: Array[Int]): Int = {
-    val vc = Vector[Int](Int.MinValue)
-
 
     @tailrec
     def lowerBound(v: Vector[Int], x: Int, lo: Int, hi: Int): Int = {
@@ -15,8 +13,8 @@ object LC_00300_Longest_Increasing_Subsequence {
       else lowerBound(v, x, lo, mi)
     }
 
-    // TODO 스칼라 immutable vector 의 시간복잡도 시간날때 점검. updated가 eC인 이유  
-    nums.foldLeft(vc)((v, x) => {
+    // TODO 스칼라 immutable vector 의 시간복잡도 시간날때 점검. updated가 eC인 이유
+    nums.foldLeft(Vector[Int](Int.MinValue))((v, x) => {
       if(x > v.last) v :+ x
       else v.updated(lowerBound(v, x, 0, v.length), x)
     }).length - 1
