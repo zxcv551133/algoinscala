@@ -25,7 +25,6 @@ object LC_00279_Perfect_Squares {
 //    pp(n)
 
 
-
     def memoize[I, O](f: I => O): I => O = new scala.collection.mutable.HashMap[I, O]() {
       override def apply(key: I): O = getOrElseUpdate(key, f(key))
     }
