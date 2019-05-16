@@ -1,8 +1,7 @@
 package LeetCode
 
 object LC_00268_Missing_Number {
-  // TODO implement function using only constatnt extra space complexity
-  // TODO Hint: there are more than 2 ways to implement with this condition.
+  // TODO implement function using only constatnt extra space complexity Hint: there are more than 2 ways to implement with this condition.
   def missingNumber(nums: Array[Int]): Int = {
     val array = new Array[Boolean](nums.length + 1)
     nums.foreach(array(_) = true)
